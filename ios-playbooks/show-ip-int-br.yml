@@ -1,0 +1,13 @@
+---
+- name: "Demonstrate connecting to switches"
+  hosts: switches
+  gather_facts: no
+
+  tasks:
+    - name: Run show ip interface brief
+      ios_command:
+        commands: show ip interface brief
+      register: output
+    - name: Print output
+      debug:
+        var: output
