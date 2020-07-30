@@ -10,3 +10,6 @@
           Unauthorized access is strictly prohibited
           ------------------------------------------
         state: present
+    - name: Save config
+      ios_config:
+        save_when: modified

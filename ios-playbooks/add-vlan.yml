@@ -1,0 +1,12 @@
+- name: Add vlan to all switches
+  hosts: ios-switches
+  gather_facts: no
+  tasks:
+    - name: Set VLAN on switch
+      ios_vlans:
+        config:
+          - name: VLAN 10
+            vlan_id: 10
+            state: active
+            shutdown: disabled
+        state: merged
