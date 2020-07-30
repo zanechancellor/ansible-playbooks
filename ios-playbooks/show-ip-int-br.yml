@@ -1,8 +1,7 @@
 ---
 - name: "Demonstrate connecting to switches"
-  hosts: switches
-  gather_facts: no
-
+  hosts: ios-switches
+  gather_facts: yes
   tasks:
     - name: Run show ip interface brief
       ios_command:

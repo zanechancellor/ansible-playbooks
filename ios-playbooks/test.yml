@@ -1,0 +1,14 @@
+- hosts: ios-switches
+  gather_facts: no
+  connection: local
+  vars:
+    ansible_persistent_log_messages: True
+    ansible_network_os: ios
+  tasks:
+  - name: IOS | Show clock
+    ios_command:
+      commands:
+        - show clock
+    register: clock
+
+  - debug: msg="{{ clock.stdout }}"

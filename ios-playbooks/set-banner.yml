@@ -1,0 +1,12 @@
+- name: Set banner on all network devices
+  hosts: ios-devices
+  gather_facts: no
+  tasks:
+    - name: Set banner on devices
+      ios_banner:
+        banner: login
+        text: |
+          Private Property
+          Unauthorized access is strictly prohibited
+          ------------------------------------------
+        state: present
